@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Carrito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>Simulador de Carrito</h1>
+        </a>
+        <select id="categoryFilter" onchange="filterByCategory()">
+            <option value="all">Todas las categorías</option>
+            <option value="Electrónica">Electrónica</option>
+            <option value="Ropa">Ropa</option>
+        </select>
+    </header>
+
+    <div class="products">
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1693179302863-40ca0cdef4d2?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen del Producto 1" class="product-image">
+            <h3>Producto 1 - $10</h3>
+            <span class="category">Categoría: Electrónica</span>
+            <span class="new-label">Nuevo</span>
+            <p>Descripción: Esta es una breve descripción del producto 1.</p>
+            <p>Valoración: ⭐⭐⭐⭐☆</p>
+            <label>Cantidad: 
+                <input type="number" class="product-quantity" value="1" min="1">
+            </label>
+            <button onclick="addToCart('Producto 1', 10)">Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1693183433465-070069f003f7?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen del Producto 2" class="product-image">
+            <h3>Producto 2 - $20</h3>
+            <span class="category">Categoría: Ropa</span>
+            <p>Descripción: Esta es una breve descripción del producto 2.</p>
+            <p>Valoración: ⭐⭐⭐☆☆</p>
+            <label>Cantidad: 
+                <input type="number" class="product-quantity" value="1" min="1">
+            </label>
+            <button onclick="addToCart('Producto 2', 20)">Añadir al carrito</button>
+        </div>
+    </div>
+    
+<div class="cart">
+    <h2>Carrito de Compras</h2>
+    <ul id="cartItems"></ul>
+    <p>Total: $<span id="totalPrice">0</span></p>
+    <button onclick="finalizePurchase()">Finalizar Compra</button>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
